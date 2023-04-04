@@ -62,5 +62,10 @@ namespace LETU_Food_Review
             corner1.Hide();
             account1.Hide();
         }
+
+        private void account1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
