@@ -1,0 +1,14 @@
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\bin\Debug\LETU Food Review.exe.config
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\bin\Debug\LETU Food Review.exe
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\bin\Debug\LETU Food Review.pdb
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\obj\Debug\LETU Food Review.csproj.AssemblyReference.cache
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\obj\Debug\LETU Food Review.csproj.SuggestedBindingRedirects.cache
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\obj\Debug\LETU_Food_Review.Account.resources
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\obj\Debug\LETU_Food_Review.Corner.resources
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\obj\Debug\LETU_Food_Review.Form1.resources
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\obj\Debug\LETU_Food_Review.Hive.resources
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\obj\Debug\LETU_Food_Review.Properties.Resources.resources
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\obj\Debug\LETU Food Review.csproj.GenerateResource.cache
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\obj\Debug\LETU Food Review.csproj.CoreCompileInputs.cache
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\obj\Debug\LETU Food Review.exe
+C:\Users\camsa\source\repos\LETU Food Review\LETU Food Review\obj\Debug\LETU Food Review.pdb
