@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LETU_Food_Review.Properties;
+using Newtonsoft.Json;
 
 namespace LETU_Food_Review
 {
@@ -17,55 +21,39 @@ namespace LETU_Food_Review
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            corner1.Show();
-            corner1.BringToFront();
-
-            hive1.Hide();
-            account1.Hide();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            hive1.Hide();
-            corner1.Hide();
-            account1.Hide();
-        }
+            //Load Hive Foods
+            var result = JsonConvert.DeserializeObject<List<HFood>>(File.ReadAllText(@"./db/hive.json"));
+            foreach (var food in result) {
+                Label lb = new Label();
+                PictureBox pb = new PictureBox();
+                pb.Image = ((System.Drawing.Image)(Resources.ResourceManager.GetObject(food.imageId)));
+                pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                lb.Size = new System.Drawing.Size(110, 16);
+                lb.Text = food.name;
+                this.hiveFlowPanel.Controls.Add(pb);
+                this.hiveFlowPanel.Controls.Add(lb);
+            }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            hive1.Show();
-            hive1.BringToFront();
-
-            corner1.Hide();
-            account1.Hide();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            account1.Show();
-            account1.BringToFront();
-
-            corner1.Hide();
-            hive1.Hide();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            hive1.Hide();
-            corner1.Hide();
-            account1.Hide();
-        }
-
-        private void account1_Load(object sender, EventArgs e)
-        {
-
+            //Load Saga Foods
+            result = JsonConvert.DeserializeObject<List<HFood>>(File.ReadAllText(@"./db/saga.json"));
+            foreach (var food in result)
+            {
+                Label lb = new Label();
+                PictureBox pb = new PictureBox();
+                pb.Image = ((System.Drawing.Image)(Resources.ResourceManager.GetObject(food.imageId)));
+                pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                lb.Size = new System.Drawing.Size(110, 16);
+                lb.Text = food.name;
+                this.sagaFlowPanel.Controls.Add(pb);
+                this.sagaFlowPanel.Controls.Add(lb);
+            }
         }
     }
+}
+public struct HFood {
+    public string name;
+    public string rating;
+    public string imageId;
 }

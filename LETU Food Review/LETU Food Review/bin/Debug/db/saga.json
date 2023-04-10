@@ -1,0 +1,22 @@
+[
+    {
+        "name": "burrito bowl",
+        "rating": 5.0,
+        "imageId": "bbowl"
+    },
+    {
+        "name": "fried fish",
+        "rating": 5.0,
+        "imageId": "ffish"
+    },
+    {
+        "name": "pasta",
+        "rating": 5.0,
+        "imageId": "pasta"
+    },
+    {
+        "name": "sloppy joe",
+        "rating": 5.0,
+        "imageId": "sjoe"
+    }
+]

@@ -1,4 +1,6 @@
-﻿namespace LETU_Food_Review
+﻿using System.Windows.Forms;
+
+namespace LETU_Food_Review
 {
     partial class Form1
     {
@@ -6,19 +8,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
 
         #region Windows Form Designer generated code
 
@@ -28,89 +17,101 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.accountPage1 = new System.Windows.Forms.TabPage();
+            this.hivePage1 = new System.Windows.Forms.TabPage();
+            this.sagaPage1 = new System.Windows.Forms.TabPage();
+            this.homePage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.hiveFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.sagaFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.account1 = new LETU_Food_Review.Account();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.account1 = new LETU_Food_Review.Account();
-            this.hive1 = new LETU_Food_Review.Hive();
-            this.corner1 = new LETU_Food_Review.Corner();
-            this.panel2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.accountPage1.SuspendLayout();
+            this.hivePage1.SuspendLayout();
+            this.sagaPage1.SuspendLayout();
+            this.homePage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
+            // tabControl1
             // 
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(314, 67);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.tabControl1.Controls.Add(this.accountPage1);
+            this.tabControl1.Controls.Add(this.hivePage1);
+            this.tabControl1.Controls.Add(this.sagaPage1);
+            this.tabControl1.Controls.Add(this.homePage1);
+            this.tabControl1.ItemSize = new System.Drawing.Size(71, 60);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(15, 3);
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(304, 432);
+            this.tabControl1.TabIndex = 2;
             // 
-            // button4
+            // accountPage1
             // 
-            this.button4.Location = new System.Drawing.Point(252, 17);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(59, 33);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Home";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.accountPage1.Controls.Add(this.account1);
+            this.accountPage1.Location = new System.Drawing.Point(4, 64);
+            this.accountPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.accountPage1.Name = "accountPage1";
+            this.accountPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.accountPage1.Size = new System.Drawing.Size(296, 364);
+            this.accountPage1.TabIndex = 0;
+            this.accountPage1.Text = "Account";
+            this.accountPage1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // hivePage1
             // 
-            this.button3.Location = new System.Drawing.Point(13, 17);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(71, 33);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Account";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.hivePage1.Controls.Add(this.hiveFlowPanel);
+            this.hivePage1.Location = new System.Drawing.Point(4, 64);
+            this.hivePage1.Margin = new System.Windows.Forms.Padding(2);
+            this.hivePage1.Name = "hivePage1";
+            this.hivePage1.Padding = new System.Windows.Forms.Padding(2);
+            this.hivePage1.Size = new System.Drawing.Size(296, 364);
+            this.hivePage1.TabIndex = 1;
+            this.hivePage1.Text = "Hive";
+            this.hivePage1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // sagaPage1
             // 
-            this.button2.Location = new System.Drawing.Point(171, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Corner";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.sagaPage1.Controls.Add(this.sagaFlowPanel);
+            this.sagaPage1.Location = new System.Drawing.Point(4, 64);
+            this.sagaPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.sagaPage1.Name = "sagaPage1";
+            this.sagaPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.sagaPage1.Size = new System.Drawing.Size(296, 364);
+            this.sagaPage1.TabIndex = 2;
+            this.sagaPage1.Text = "Corner";
+            this.sagaPage1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // homePage1
             // 
-            this.button1.Location = new System.Drawing.Point(90, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Hive";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.homePage1.Controls.Add(this.panel1);
+            this.homePage1.Location = new System.Drawing.Point(4, 64);
+            this.homePage1.Margin = new System.Windows.Forms.Padding(2);
+            this.homePage1.Name = "homePage1";
+            this.homePage1.Padding = new System.Windows.Forms.Padding(2);
+            this.homePage1.Size = new System.Drawing.Size(296, 364);
+            this.homePage1.TabIndex = 3;
+            this.homePage1.Text = "Home";
+            this.homePage1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.corner1);
-            this.panel1.Controls.Add(this.hive1);
-            this.panel1.Controls.Add(this.account1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.label5);
@@ -120,124 +121,144 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 69);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 380);
+            this.panel1.Size = new System.Drawing.Size(236, 309);
             this.panel1.TabIndex = 0;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(42, 266);
+            this.label6.Location = new System.Drawing.Point(32, 216);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 16);
+            this.label6.Size = new System.Drawing.Size(66, 15);
             this.label6.TabIndex = 8;
             this.label6.Text = "Pasta (2.7)";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(13, 187);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(131, 76);
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(213, 48);
+            this.label5.Location = new System.Drawing.Point(160, 39);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 16);
+            this.label5.Size = new System.Drawing.Size(31, 15);
             this.label5.TabIndex = 6;
             this.label5.Text = "Hive";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 43);
+            this.label4.Location = new System.Drawing.Point(38, 35);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 16);
+            this.label4.Size = new System.Drawing.Size(44, 15);
             this.label4.TabIndex = 5;
             this.label4.Text = "Corner";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(178, 157);
+            this.label3.Location = new System.Drawing.Point(134, 128);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 16);
+            this.label3.Size = new System.Drawing.Size(101, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "Burrito Bowl (3.8)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 157);
+            this.label2.Location = new System.Drawing.Point(14, 128);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 16);
+            this.label2.Size = new System.Drawing.Size(115, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Chicken Tacos (4.2)";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(72, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Reviewed Foods";
+            // 
+            // hiveFlowPanel
+            // 
+            this.hiveFlowPanel.Location = new System.Drawing.Point(0, 5);
+            this.hiveFlowPanel.Name = "hiveFlowPanel";
+            this.hiveFlowPanel.Size = new System.Drawing.Size(296, 363);
+            this.hiveFlowPanel.TabIndex = 13;
+            // 
+            // sagaFlowPanel
+            // 
+            this.sagaFlowPanel.Location = new System.Drawing.Point(0, 0);
+            this.sagaFlowPanel.Name = "sagaFlowPanel";
+            this.sagaFlowPanel.Size = new System.Drawing.Size(296, 364);
+            this.sagaFlowPanel.TabIndex = 0;
+            // 
+            // account1
+            // 
+            this.account1.Location = new System.Drawing.Point(0, 0);
+            this.account1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.account1.Name = "account1";
+            this.account1.Size = new System.Drawing.Size(236, 309);
+            this.account1.TabIndex = 9;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(10, 152);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(98, 62);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(171, 78);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(128, 63);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(131, 76);
+            this.pictureBox2.Size = new System.Drawing.Size(98, 62);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 78);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(10, 63);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(131, 76);
+            this.pictureBox1.Size = new System.Drawing.Size(98, 62);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Reviewed Foods";
-            // 
-            // account1
-            // 
-            this.account1.Location = new System.Drawing.Point(0, 0);
-            this.account1.Name = "account1";
-            this.account1.Size = new System.Drawing.Size(314, 380);
-            this.account1.TabIndex = 9;
-            this.account1.Load += new System.EventHandler(this.account1_Load);
-            // 
-            // hive1
-            // 
-            this.hive1.Location = new System.Drawing.Point(0, 0);
-            this.hive1.Name = "hive1";
-            this.hive1.Size = new System.Drawing.Size(314, 380);
-            this.hive1.TabIndex = 10;
-            // 
-            // corner1
-            // 
-            this.corner1.Location = new System.Drawing.Point(0, -2);
-            this.corner1.Name = "corner1";
-            this.corner1.Size = new System.Drawing.Size(314, 382);
-            this.corner1.TabIndex = 11;
-            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 449);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(302, 431);
+            this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel2.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.accountPage1.ResumeLayout(false);
+            this.hivePage1.ResumeLayout(false);
+            this.sagaPage1.ResumeLayout(false);
+            this.homePage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -248,12 +269,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label5;
@@ -264,8 +280,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private Account account1;
-        private Corner corner1;
-        private Hive hive1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage accountPage1;
+        private System.Windows.Forms.TabPage hivePage1;
+        private System.Windows.Forms.TabPage sagaPage1;
+        private System.Windows.Forms.TabPage homePage1;
+        private FlowLayoutPanel hiveFlowPanel;
+        private FlowLayoutPanel sagaFlowPanel;
     }
 }
 
