@@ -1,17 +1,1 @@
-[
-    {
-        "name": "pizza",
-        "rating": 5.0,
-        "imageId": "pizza"
-    },
-    {
-        "name": "burrito",
-        "rating": 5.0,
-        "imageId": "burrito"
-    },
-    {
-        "name": "chicken strips",
-        "rating": 5.0,
-        "imageId": "strips"
-    }
-]
+[{"name":"pizza","rating":"5.0","imageId":"pizza"},{"name":"burrito","rating":"5.0","imageId":"burrito"},{"name":"chicken strips","rating":"5.0","imageId":"strips"}]

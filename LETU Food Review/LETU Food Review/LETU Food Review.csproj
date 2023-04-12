@@ -140,28 +140,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\pizza.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\strips.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\burrito.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\bbowl.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\ffish.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\pasta.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\sjoe.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\taco.jpg" />
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
