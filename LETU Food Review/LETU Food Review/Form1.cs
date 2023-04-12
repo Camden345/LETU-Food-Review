@@ -32,14 +32,17 @@ namespace LETU_Food_Review
             var result = JsonConvert.DeserializeObject<List<HFood>>(File.ReadAllText(@"./db/hive.json"));
             foreach (var food in result)
             {
-                Label lb = new Label();
-                PictureBox pb = new PictureBox();
-                pb.Image = ((System.Drawing.Image)(Resources.ResourceManager.GetObject(food.imageId)));
-                pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-                lb.Size = new System.Drawing.Size(110, 16);
-                lb.Text = food.name;
-                this.hiveFlowPanel.Controls.Add(pb);
-                this.hiveFlowPanel.Controls.Add(lb);
+                if (food.accepted)
+                {
+                    Label lb = new Label();
+                    PictureBox pb = new PictureBox();
+                    pb.Image = ((System.Drawing.Image)(Resources.ResourceManager.GetObject(food.imageId)));
+                    pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                    lb.Size = new System.Drawing.Size(110, 16);
+                    lb.Text = food.name;
+                    this.hiveFlowPanel.Controls.Add(pb);
+                    this.hiveFlowPanel.Controls.Add(lb);
+                }
             }
         }
 
@@ -48,14 +51,17 @@ namespace LETU_Food_Review
             var result = JsonConvert.DeserializeObject<List<HFood>>(File.ReadAllText(@"./db/saga.json"));
             foreach (var food in result)
             {
-                Label lb = new Label();
-                PictureBox pb = new PictureBox();
-                pb.Image = ((System.Drawing.Image)(Resources.ResourceManager.GetObject(food.imageId)));
-                pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-                lb.Size = new System.Drawing.Size(110, 16);
-                lb.Text = food.name;
-                this.sagaFlowPanel.Controls.Add(pb);
-                this.sagaFlowPanel.Controls.Add(lb);
+                if (food.accepted)
+                {
+                    Label lb = new Label();
+                    PictureBox pb = new PictureBox();
+                    pb.Image = ((System.Drawing.Image)(Resources.ResourceManager.GetObject(food.imageId)));
+                    pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                    lb.Size = new System.Drawing.Size(110, 16);
+                    lb.Text = food.name;
+                    this.sagaFlowPanel.Controls.Add(pb);
+                    this.sagaFlowPanel.Controls.Add(lb);
+                }
             }
         }
 
@@ -155,4 +161,5 @@ public struct HFood {
     public string name;
     public string rating;
     public string imageId;
+    public bool accepted;
 }
