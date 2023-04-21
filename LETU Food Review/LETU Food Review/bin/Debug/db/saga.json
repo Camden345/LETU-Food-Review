@@ -1,1 +1,1 @@
-[{"name":"fried fish","rating":"5.0","imageId":"ffish", "accepted": 1},{"name":"pasta","rating":"5.0","imageId":"pasta", "accepted": 1},{"name":"sloppy joe","rating":"5.0","imageId":"sjoe", "accepted": 1}]
+[{"name":"fried fish","rating":"5.0","imageId":"ffish","accepted":true},{"name":"pasta","rating":"5.0","imageId":"pasta","accepted":true},{"name":"sloppy joe","rating":"5.0","imageId":"sjoe","accepted":true}]
