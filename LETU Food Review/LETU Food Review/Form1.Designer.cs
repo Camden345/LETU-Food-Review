@@ -20,7 +20,6 @@ namespace LETU_Food_Review
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.accountPage1 = new System.Windows.Forms.TabPage();
-            this.account1 = new LETU_Food_Review.Account();
             this.hivePage1 = new System.Windows.Forms.TabPage();
             this.addHiveFood = new System.Windows.Forms.Button();
             this.hiveRefresh = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@ namespace LETU_Food_Review
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.accountFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.accountPage1.SuspendLayout();
             this.hivePage1.SuspendLayout();
@@ -68,7 +68,7 @@ namespace LETU_Food_Review
             // 
             // accountPage1
             // 
-            this.accountPage1.Controls.Add(this.account1);
+            this.accountPage1.Controls.Add(this.accountFlowPanel);
             this.accountPage1.Location = new System.Drawing.Point(4, 64);
             this.accountPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.accountPage1.Name = "accountPage1";
@@ -77,14 +77,6 @@ namespace LETU_Food_Review
             this.accountPage1.TabIndex = 0;
             this.accountPage1.Text = "Account";
             this.accountPage1.UseVisualStyleBackColor = true;
-            // 
-            // account1
-            // 
-            this.account1.Location = new System.Drawing.Point(0, 0);
-            this.account1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.account1.Name = "account1";
-            this.account1.Size = new System.Drawing.Size(315, 380);
-            this.account1.TabIndex = 9;
             // 
             // hivePage1
             // 
@@ -288,6 +280,13 @@ namespace LETU_Food_Review
             this.label1.TabIndex = 0;
             this.label1.Text = "Reviewed Foods";
             // 
+            // accountFlowPanel
+            // 
+            this.accountFlowPanel.Location = new System.Drawing.Point(6, 5);
+            this.accountFlowPanel.Name = "accountFlowPanel";
+            this.accountFlowPanel.Size = new System.Drawing.Size(385, 520);
+            this.accountFlowPanel.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -325,7 +324,6 @@ namespace LETU_Food_Review
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private Account account1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage accountPage1;
         private System.Windows.Forms.TabPage hivePage1;
@@ -337,6 +335,7 @@ namespace LETU_Food_Review
         private Button sagaRefresh;
         private Button addHiveFood;
         private Button addSagaFood;
+        private FlowLayoutPanel accountFlowPanel;
     }
 }
 
