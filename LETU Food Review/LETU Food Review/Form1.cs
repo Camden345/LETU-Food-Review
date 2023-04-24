@@ -203,6 +203,16 @@ namespace LETU_Food_Review
                     this.hiveFlowPanel.Controls.Add(lb);
                 }
             }
+            Button addFood = new Button();
+            addFood.Text = "Add Food";
+            addFood.UseVisualStyleBackColor = true;
+            addFood.Click += new System.EventHandler(this.addHiveFood_Click);
+            this.hiveFlowPanel.Controls.Add(addFood);
+            Button refresh = new Button();
+            refresh.Text = "Refresh";
+            refresh.UseVisualStyleBackColor = true;
+            refresh.Click += new System.EventHandler(this.hiveRefresh_Click);
+            this.hiveFlowPanel.Controls.Add(refresh);
         }
 
         private void LoadSaga()
@@ -223,6 +233,16 @@ namespace LETU_Food_Review
                     this.sagaFlowPanel.Controls.Add(lb);
                 }
             }
+            Button addFood = new Button();
+            addFood.Text = "Add Food";
+            addFood.UseVisualStyleBackColor = true;
+            addFood.Click += new System.EventHandler(this.addSagaFood_Click);
+            this.sagaFlowPanel.Controls.Add(addFood);
+            Button refresh = new Button();
+            refresh.Text = "Refresh";
+            refresh.UseVisualStyleBackColor = true;
+            refresh.Click += new System.EventHandler(this.sagaRefresh_Click);
+            this.sagaFlowPanel.Controls.Add(refresh);
         }
         
         private void clearHiveReviews(object sender, EventArgs e)
@@ -280,38 +300,40 @@ namespace LETU_Food_Review
         private void click_uploadHiveReview(string foodId)
         {
             this.hiveFlowPanel.Controls.Clear();
-            Label userNameLb = new Label();
-            userNameLb.Size = new System.Drawing.Size(110, 16);
-            userNameLb.Text = "User Name:";
-            this.hiveFlowPanel.Controls.Add(userNameLb);
-            TextBox userNameTb = new TextBox();
-            userNameTb.Name = "UserName";
-            userNameTb.Size = new System.Drawing.Size(100, 22);
-            this.hiveFlowPanel.Controls.Add(userNameTb);
-            Label ratingLb = new Label();
-            ratingLb.Size = new System.Drawing.Size(110, 16);
-            ratingLb.Text = "Rating:";
-            this.hiveFlowPanel.Controls.Add(ratingLb);
-            TextBox ratingTb = new TextBox();
-            ratingTb.Name = "Rating";
-            ratingTb.Size = new System.Drawing.Size(100, 22);
-            this.hiveFlowPanel.Controls.Add(ratingTb);
-            Label reviewLb = new Label();
-            reviewLb.Size = new System.Drawing.Size(110, 16);
-            reviewLb.Text = "Review:";
-            this.hiveFlowPanel.Controls.Add(reviewLb);
-            TextBox reviewTb = new TextBox();
-            reviewTb.Name = "Review";
-            reviewTb.Size = new System.Drawing.Size(100, 22);
-            this.hiveFlowPanel.Controls.Add(reviewTb);
-            Button submit = new Button();
-            submit.Size = new System.Drawing.Size(100, 23);
-            submit.Text = "Submit";
-            submit.UseVisualStyleBackColor = true;
-            submit.Click += new System.EventHandler((x, y) => this.submitHiveReview(foodId));
-            this.hiveFlowPanel.Controls.Add(submit);
+            var result = JsonConvert.DeserializeObject<LocalData>(File.ReadAllText(@"./db/localdata.json"));
+            if (result.user != "")
+            {
+                Label ratingLb = new Label();
+                ratingLb.Size = new System.Drawing.Size(110, 16);
+                ratingLb.Text = "Rating:";
+                this.hiveFlowPanel.Controls.Add(ratingLb);
+                TextBox ratingTb = new TextBox();
+                ratingTb.Name = "Rating";
+                ratingTb.Size = new System.Drawing.Size(100, 22);
+                this.hiveFlowPanel.Controls.Add(ratingTb);
+                Label reviewLb = new Label();
+                reviewLb.Size = new System.Drawing.Size(110, 16);
+                reviewLb.Text = "Review:";
+                this.hiveFlowPanel.Controls.Add(reviewLb);
+                TextBox reviewTb = new TextBox();
+                reviewTb.Name = "Review";
+                reviewTb.Size = new System.Drawing.Size(100, 22);
+                this.hiveFlowPanel.Controls.Add(reviewTb);
+                Button submit = new Button();
+                submit.Size = new System.Drawing.Size(100, 23);
+                submit.Text = "Submit";
+                submit.UseVisualStyleBackColor = true;
+                submit.Click += new System.EventHandler((x, y) => this.submitHiveReview(foodId));
+                this.hiveFlowPanel.Controls.Add(submit);
+            }
+            else
+            {
+                Label reviewLb = new Label();
+                reviewLb.Size = new System.Drawing.Size(2000, 16);
+                reviewLb.Text = "You must be signed in to review a food.";
+                this.hiveFlowPanel.Controls.Add(reviewLb);
+            }
             Button cancel = new Button();
-            cancel.Size = new System.Drawing.Size(100, 23);
             cancel.Text = "Cancel";
             cancel.UseVisualStyleBackColor = true;
             cancel.Click += new System.EventHandler(this.clearHiveReviews);
@@ -320,14 +342,25 @@ namespace LETU_Food_Review
 
         private void submitHiveReview(string foodId)
         {
-            var result = JsonConvert.DeserializeObject<List<Review>>(File.ReadAllText(@"./db/" + foodId + ".json"));
-            result.Add(new Review()
+            var result = JsonConvert.DeserializeObject<LocalData>(File.ReadAllText(@"./db/localdata.json"));
+            var name = "";
+            var result2 = JsonConvert.DeserializeObject<List<User>>(File.ReadAllText(@"./db/users.json"));
+            foreach(var user in result2)
             {
-                name = this.hiveFlowPanel.Controls.Find("UserName", true)[0].Text,
+                if(user.email == result.user)
+                {
+                    name = user.name;
+                    break;
+                }
+            }
+            var result3 = JsonConvert.DeserializeObject<List<Review>>(File.ReadAllText(@"./db/" + foodId + ".json"));
+            result3.Add(new Review()
+            {
+                name = name,
                 rating = this.hiveFlowPanel.Controls.Find("Rating", true)[0].Text,
                 review = this.hiveFlowPanel.Controls.Find("Review", true)[0].Text
             });
-            System.IO.File.WriteAllText(@"./db/" + foodId + ".json", JsonConvert.SerializeObject(result));
+            System.IO.File.WriteAllText(@"./db/" + foodId + ".json", JsonConvert.SerializeObject(result3));
             this.hiveFlowPanel.Controls.Clear();
             this.loadHiveReviews(foodId);
         }
@@ -376,36 +409,39 @@ namespace LETU_Food_Review
         private void click_uploadSagaReview(string foodId)
         {
             this.sagaFlowPanel.Controls.Clear();
-            Label userNameLb = new Label();
-            userNameLb.Size = new System.Drawing.Size(110, 16);
-            userNameLb.Text = "User Name:";
-            this.sagaFlowPanel.Controls.Add(userNameLb);
-            TextBox userNameTb = new TextBox();
-            userNameTb.Name = "UserName";
-            userNameTb.Size = new System.Drawing.Size(100, 22);
-            this.sagaFlowPanel.Controls.Add(userNameTb);
-            Label ratingLb = new Label();
-            ratingLb.Size = new System.Drawing.Size(110, 16);
-            ratingLb.Text = "Rating:";
-            this.sagaFlowPanel.Controls.Add(ratingLb);
-            TextBox ratingTb = new TextBox();
-            ratingTb.Name = "Rating";
-            ratingTb.Size = new System.Drawing.Size(100, 22);
-            this.sagaFlowPanel.Controls.Add(ratingTb);
-            Label reviewLb = new Label();
-            reviewLb.Size = new System.Drawing.Size(110, 16);
-            reviewLb.Text = "Review:";
-            this.sagaFlowPanel.Controls.Add(reviewLb);
-            TextBox reviewTb = new TextBox();
-            reviewTb.Name = "Review";
-            reviewTb.Size = new System.Drawing.Size(100, 22);
-            this.sagaFlowPanel.Controls.Add(reviewTb);
-            Button submit = new Button();
-            submit.Size = new System.Drawing.Size(100, 23);
-            submit.Text = "Submit";
-            submit.UseVisualStyleBackColor = true;
-            submit.Click += new System.EventHandler((x, y) => this.submitSagaReview(foodId));
-            this.sagaFlowPanel.Controls.Add(submit);
+            var result = JsonConvert.DeserializeObject<LocalData>(File.ReadAllText(@"./db/localdata.json"));
+            if (result.user != "")
+            {
+                Label ratingLb = new Label();
+                ratingLb.Size = new System.Drawing.Size(110, 16);
+                ratingLb.Text = "Rating:";
+                this.sagaFlowPanel.Controls.Add(ratingLb);
+                TextBox ratingTb = new TextBox();
+                ratingTb.Name = "Rating";
+                ratingTb.Size = new System.Drawing.Size(100, 22);
+                this.sagaFlowPanel.Controls.Add(ratingTb);
+                Label reviewLb = new Label();
+                reviewLb.Size = new System.Drawing.Size(110, 16);
+                reviewLb.Text = "Review:";
+                this.sagaFlowPanel.Controls.Add(reviewLb);
+                TextBox reviewTb = new TextBox();
+                reviewTb.Name = "Review";
+                reviewTb.Size = new System.Drawing.Size(100, 22);
+                this.sagaFlowPanel.Controls.Add(reviewTb);
+                Button submit = new Button();
+                submit.Size = new System.Drawing.Size(100, 23);
+                submit.Text = "Submit";
+                submit.UseVisualStyleBackColor = true;
+                submit.Click += new System.EventHandler((x, y) => this.submitSagaReview(foodId));
+                this.sagaFlowPanel.Controls.Add(submit);
+            }
+            else
+            {
+                Label reviewLb = new Label();
+                reviewLb.Size = new System.Drawing.Size(2000, 16);
+                reviewLb.Text = "You must be signed in to review a food.";
+                this.sagaFlowPanel.Controls.Add(reviewLb);
+            }
             Button cancel = new Button();
             cancel.Size = new System.Drawing.Size(100, 23);
             cancel.Text = "Cancel";
@@ -416,14 +452,25 @@ namespace LETU_Food_Review
 
         private void submitSagaReview(string foodId)
         {
-            var result = JsonConvert.DeserializeObject<List<Review>>(File.ReadAllText(@"./db/" + foodId + ".json"));
-            result.Add(new Review()
+            var result = JsonConvert.DeserializeObject<LocalData>(File.ReadAllText(@"./db/localdata.json"));
+            var name = "";
+            var result2 = JsonConvert.DeserializeObject<List<User>>(File.ReadAllText(@"./db/users.json"));
+            foreach (var user in result2)
             {
-                name = this.sagaFlowPanel.Controls.Find("UserName", true)[0].Text,
+                if (user.email == result.user)
+                {
+                    name = user.name;
+                    break;
+                }
+            }
+            var result3 = JsonConvert.DeserializeObject<List<Review>>(File.ReadAllText(@"./db/" + foodId + ".json"));
+            result3.Add(new Review()
+            {
+                name = name,
                 rating = this.sagaFlowPanel.Controls.Find("Rating", true)[0].Text,
                 review = this.sagaFlowPanel.Controls.Find("Review", true)[0].Text
             });
-            System.IO.File.WriteAllText(@"./db/" + foodId + ".json", JsonConvert.SerializeObject(result));
+            System.IO.File.WriteAllText(@"./db/" + foodId + ".json", JsonConvert.SerializeObject(result3));
             this.sagaFlowPanel.Controls.Clear();
             this.loadSagaReviews(foodId);
         }

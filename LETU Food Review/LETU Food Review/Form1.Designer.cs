@@ -20,13 +20,10 @@ namespace LETU_Food_Review
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.accountPage1 = new System.Windows.Forms.TabPage();
+            this.accountFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.hivePage1 = new System.Windows.Forms.TabPage();
-            this.addHiveFood = new System.Windows.Forms.Button();
-            this.hiveRefresh = new System.Windows.Forms.Button();
             this.hiveFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.sagaPage1 = new System.Windows.Forms.TabPage();
-            this.addSagaFood = new System.Windows.Forms.Button();
-            this.sagaRefresh = new System.Windows.Forms.Button();
             this.sagaFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.homePage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,7 +36,6 @@ namespace LETU_Food_Review
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.accountFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.accountPage1.SuspendLayout();
             this.hivePage1.SuspendLayout();
@@ -63,7 +59,7 @@ namespace LETU_Food_Review
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(15, 3);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(405, 598);
+            this.tabControl1.Size = new System.Drawing.Size(405, 608);
             this.tabControl1.TabIndex = 2;
             // 
             // accountPage1
@@ -78,39 +74,24 @@ namespace LETU_Food_Review
             this.accountPage1.Text = "Account";
             this.accountPage1.UseVisualStyleBackColor = true;
             // 
+            // accountFlowPanel
+            // 
+            this.accountFlowPanel.Location = new System.Drawing.Point(6, 5);
+            this.accountFlowPanel.Name = "accountFlowPanel";
+            this.accountFlowPanel.Size = new System.Drawing.Size(385, 520);
+            this.accountFlowPanel.TabIndex = 0;
+            // 
             // hivePage1
             // 
-            this.hivePage1.Controls.Add(this.addHiveFood);
-            this.hivePage1.Controls.Add(this.hiveRefresh);
             this.hivePage1.Controls.Add(this.hiveFlowPanel);
             this.hivePage1.Location = new System.Drawing.Point(4, 64);
             this.hivePage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hivePage1.Name = "hivePage1";
             this.hivePage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.hivePage1.Size = new System.Drawing.Size(397, 530);
+            this.hivePage1.Size = new System.Drawing.Size(397, 540);
             this.hivePage1.TabIndex = 1;
             this.hivePage1.Text = "Hive";
             this.hivePage1.UseVisualStyleBackColor = true;
-            // 
-            // addHiveFood
-            // 
-            this.addHiveFood.Location = new System.Drawing.Point(4, 491);
-            this.addHiveFood.Name = "addHiveFood";
-            this.addHiveFood.Size = new System.Drawing.Size(100, 23);
-            this.addHiveFood.TabIndex = 15;
-            this.addHiveFood.Text = "Add Food";
-            this.addHiveFood.UseVisualStyleBackColor = true;
-            this.addHiveFood.Click += new System.EventHandler(this.addHiveFood_Click);
-            // 
-            // hiveRefresh
-            // 
-            this.hiveRefresh.Location = new System.Drawing.Point(110, 491);
-            this.hiveRefresh.Name = "hiveRefresh";
-            this.hiveRefresh.Size = new System.Drawing.Size(100, 23);
-            this.hiveRefresh.TabIndex = 14;
-            this.hiveRefresh.Text = "Refresh Page";
-            this.hiveRefresh.UseVisualStyleBackColor = true;
-            this.hiveRefresh.Click += new System.EventHandler(this.hiveRefresh_Click);
             // 
             // hiveFlowPanel
             // 
@@ -118,42 +99,20 @@ namespace LETU_Food_Review
             this.hiveFlowPanel.Location = new System.Drawing.Point(0, 0);
             this.hiveFlowPanel.Margin = new System.Windows.Forms.Padding(4);
             this.hiveFlowPanel.Name = "hiveFlowPanel";
-            this.hiveFlowPanel.Size = new System.Drawing.Size(395, 484);
+            this.hiveFlowPanel.Size = new System.Drawing.Size(395, 521);
             this.hiveFlowPanel.TabIndex = 13;
             // 
             // sagaPage1
             // 
-            this.sagaPage1.Controls.Add(this.addSagaFood);
-            this.sagaPage1.Controls.Add(this.sagaRefresh);
             this.sagaPage1.Controls.Add(this.sagaFlowPanel);
             this.sagaPage1.Location = new System.Drawing.Point(4, 64);
             this.sagaPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sagaPage1.Name = "sagaPage1";
             this.sagaPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.sagaPage1.Size = new System.Drawing.Size(397, 530);
+            this.sagaPage1.Size = new System.Drawing.Size(397, 540);
             this.sagaPage1.TabIndex = 2;
             this.sagaPage1.Text = "Corner";
             this.sagaPage1.UseVisualStyleBackColor = true;
-            // 
-            // addSagaFood
-            // 
-            this.addSagaFood.Location = new System.Drawing.Point(4, 491);
-            this.addSagaFood.Name = "addSagaFood";
-            this.addSagaFood.Size = new System.Drawing.Size(100, 23);
-            this.addSagaFood.TabIndex = 2;
-            this.addSagaFood.Text = "Add Food";
-            this.addSagaFood.UseVisualStyleBackColor = true;
-            this.addSagaFood.Click += new System.EventHandler(this.addSagaFood_Click);
-            // 
-            // sagaRefresh
-            // 
-            this.sagaRefresh.Location = new System.Drawing.Point(110, 491);
-            this.sagaRefresh.Name = "sagaRefresh";
-            this.sagaRefresh.Size = new System.Drawing.Size(100, 23);
-            this.sagaRefresh.TabIndex = 1;
-            this.sagaRefresh.Text = "Refresh Page";
-            this.sagaRefresh.UseVisualStyleBackColor = true;
-            this.sagaRefresh.Click += new System.EventHandler(this.sagaRefresh_Click);
             // 
             // sagaFlowPanel
             // 
@@ -161,7 +120,7 @@ namespace LETU_Food_Review
             this.sagaFlowPanel.Location = new System.Drawing.Point(0, 0);
             this.sagaFlowPanel.Margin = new System.Windows.Forms.Padding(4);
             this.sagaFlowPanel.Name = "sagaFlowPanel";
-            this.sagaFlowPanel.Size = new System.Drawing.Size(395, 484);
+            this.sagaFlowPanel.Size = new System.Drawing.Size(395, 521);
             this.sagaFlowPanel.TabIndex = 0;
             // 
             // homePage1
@@ -280,13 +239,6 @@ namespace LETU_Food_Review
             this.label1.TabIndex = 0;
             this.label1.Text = "Reviewed Foods";
             // 
-            // accountFlowPanel
-            // 
-            this.accountFlowPanel.Location = new System.Drawing.Point(6, 5);
-            this.accountFlowPanel.Name = "accountFlowPanel";
-            this.accountFlowPanel.Size = new System.Drawing.Size(385, 520);
-            this.accountFlowPanel.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -331,10 +283,6 @@ namespace LETU_Food_Review
         private System.Windows.Forms.TabPage homePage1;
         private FlowLayoutPanel hiveFlowPanel;
         private FlowLayoutPanel sagaFlowPanel;
-        private Button hiveRefresh;
-        private Button sagaRefresh;
-        private Button addHiveFood;
-        private Button addSagaFood;
         private FlowLayoutPanel accountFlowPanel;
     }
 }
