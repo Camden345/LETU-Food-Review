@@ -347,17 +347,17 @@ namespace LETU_Food_Review
             {
                 Label userlbl = new Label();
                 userlbl.ForeColor = Color.Gold;
-                userlbl.Size = new System.Drawing.Size(110, 20);
+                userlbl.Size = new System.Drawing.Size(110, 30);
                 userlbl.Font = new Font("Eras ITC", 12);
                 userlbl.Text = review.name;
                 Label ratinglbl = new Label();
                 ratinglbl.ForeColor = Color.Gold;
-                ratinglbl.Size = new System.Drawing.Size(110, 20);
+                ratinglbl.Size = new System.Drawing.Size(110, 30);
                 ratinglbl.Font = new Font("Eras ITC", 12);
                 ratinglbl.Text = review.rating;
                 Label reviewlbl = new Label();
                 reviewlbl.ForeColor = Color.Gold;
-                reviewlbl.Size = new System.Drawing.Size(110, 20);
+                reviewlbl.Size = new System.Drawing.Size(150, 40);
                 reviewlbl.Font = new Font("Eras ITC", 12);
                 reviewlbl.Text = review.review;
                 waste = new Label();
@@ -384,24 +384,38 @@ namespace LETU_Food_Review
             if (result.user != "")
             {
                 Label ratingLb = new Label();
-                ratingLb.Size = new System.Drawing.Size(110, 16);
+                ratingLb.Size = new System.Drawing.Size(110, 20);
                 ratingLb.Text = "Rating:";
+                ratingLb.ForeColor = Color.Gold;
+                ratingLb.Font = new Font("Sitka Small", 12);
                 this.hiveFlowPanel.Controls.Add(ratingLb);
+
                 TextBox ratingTb = new TextBox();
                 ratingTb.Name = "Rating";
-                ratingTb.Size = new System.Drawing.Size(100, 22);
+                ratingTb.ForeColor = Color.MidnightBlue;
+                ratingTb.Size = new System.Drawing.Size(160, 20);
+                ratingTb.Font = new Font("Eras ITC", 11);
                 this.hiveFlowPanel.Controls.Add(ratingTb);
+
                 Label reviewLb = new Label();
-                reviewLb.Size = new System.Drawing.Size(110, 16);
+                reviewLb.Size = new System.Drawing.Size(110, 50);
                 reviewLb.Text = "Review:";
+                reviewLb.ForeColor = Color.Gold;
+                reviewLb.Font = new Font("Sitka Small", 12);
                 this.hiveFlowPanel.Controls.Add(reviewLb);
+
                 TextBox reviewTb = new TextBox();
                 reviewTb.Name = "Review";
-                reviewTb.Size = new System.Drawing.Size(100, 22);
+                reviewTb.ForeColor = Color.MidnightBlue;
+                reviewTb.Size = new System.Drawing.Size(160, 50);
+                reviewTb.Font = new Font("Eras ITC", 11);
                 this.hiveFlowPanel.Controls.Add(reviewTb);
+
                 Button submit = new Button();
-                submit.Size = new System.Drawing.Size(100, 23);
+                submit.Size = new System.Drawing.Size(135, 30);
                 submit.Text = "Submit";
+                submit.ForeColor = Color.MidnightBlue;
+                submit.Font = new Font("Sitka Small", 10);
                 submit.UseVisualStyleBackColor = true;
                 submit.Click += new System.EventHandler((x, y) => this.submitHiveReview(foodId));
                 this.hiveFlowPanel.Controls.Add(submit);
@@ -409,12 +423,17 @@ namespace LETU_Food_Review
             else
             {
                 Label reviewLb = new Label();
-                reviewLb.Size = new System.Drawing.Size(2000, 16);
+                reviewLb.ForeColor = Color.Gold;
+                reviewLb.Size = new System.Drawing.Size(290, 20);
+                reviewLb.Font = new Font("Eras ITC", 12);
                 reviewLb.Text = "You must be signed in to review a food.";
                 this.hiveFlowPanel.Controls.Add(reviewLb);
             }
             Button cancel = new Button();
+            cancel.Size = new System.Drawing.Size(135, 30);
             cancel.Text = "Cancel";
+            cancel.ForeColor = Color.MidnightBlue;
+            cancel.Font = new Font("Sitka Small", 10);
             cancel.UseVisualStyleBackColor = true;
             cancel.Click += new System.EventHandler(this.clearHiveReviews);
             this.hiveFlowPanel.Controls.Add(cancel);
@@ -475,7 +494,7 @@ namespace LETU_Food_Review
                 ratinglbl.Text = review.rating;
                 Label reviewlbl = new Label();
                 reviewlbl.ForeColor = Color.Gold;
-                reviewlbl.Size = new System.Drawing.Size(110, 20);
+                reviewlbl.Size = new System.Drawing.Size(150, 20);
                 reviewlbl.Font = new Font("Eras ITC", 12);
                 reviewlbl.Text = review.review;
                 waste = new Label();
@@ -503,24 +522,38 @@ namespace LETU_Food_Review
             if (result.user != "")
             {
                 Label ratingLb = new Label();
-                ratingLb.Size = new System.Drawing.Size(110, 16);
+                ratingLb.Size = new System.Drawing.Size(110, 20);
                 ratingLb.Text = "Rating:";
+                ratingLb.ForeColor = Color.Gold;
+                ratingLb.Font = new Font("Sitka Small", 12);
                 this.sagaFlowPanel.Controls.Add(ratingLb);
+
                 TextBox ratingTb = new TextBox();
                 ratingTb.Name = "Rating";
-                ratingTb.Size = new System.Drawing.Size(100, 22);
+                ratingTb.ForeColor = Color.MidnightBlue;
+                ratingTb.Size = new System.Drawing.Size(160, 20);
+                ratingTb.Font = new Font("Eras ITC", 11);
                 this.sagaFlowPanel.Controls.Add(ratingTb);
+
                 Label reviewLb = new Label();
-                reviewLb.Size = new System.Drawing.Size(110, 16);
+                reviewLb.Size = new System.Drawing.Size(110, 50);
                 reviewLb.Text = "Review:";
+                reviewLb.ForeColor = Color.Gold;
+                reviewLb.Font = new Font("Sitka Small", 12);
                 this.sagaFlowPanel.Controls.Add(reviewLb);
+
                 TextBox reviewTb = new TextBox();
                 reviewTb.Name = "Review";
-                reviewTb.Size = new System.Drawing.Size(100, 22);
+                reviewTb.ForeColor = Color.MidnightBlue;
+                reviewTb.Size = new System.Drawing.Size(160, 50);
+                reviewTb.Font = new Font("Eras ITC", 11);
                 this.sagaFlowPanel.Controls.Add(reviewTb);
+
                 Button submit = new Button();
-                submit.Size = new System.Drawing.Size(100, 23);
+                submit.Size = new System.Drawing.Size(135, 30);
                 submit.Text = "Submit";
+                submit.ForeColor = Color.MidnightBlue;
+                submit.Font = new Font("Sitka Small", 10);
                 submit.UseVisualStyleBackColor = true;
                 submit.Click += new System.EventHandler((x, y) => this.submitSagaReview(foodId));
                 this.sagaFlowPanel.Controls.Add(submit);
@@ -528,13 +561,17 @@ namespace LETU_Food_Review
             else
             {
                 Label reviewLb = new Label();
-                reviewLb.Size = new System.Drawing.Size(2000, 16);
+                reviewLb.ForeColor = Color.Gold;
+                reviewLb.Size = new System.Drawing.Size(290, 20);
+                reviewLb.Font = new Font("Eras ITC", 12);
                 reviewLb.Text = "You must be signed in to review a food.";
                 this.sagaFlowPanel.Controls.Add(reviewLb);
             }
             Button cancel = new Button();
-            cancel.Size = new System.Drawing.Size(100, 23);
+            cancel.Size = new System.Drawing.Size(135, 30);
             cancel.Text = "Cancel";
+            cancel.ForeColor = Color.MidnightBlue;
+            cancel.Font = new Font("Sitka Small", 10);
             cancel.UseVisualStyleBackColor = true;
             cancel.Click += new System.EventHandler(this.clearSagaReviews);
             this.sagaFlowPanel.Controls.Add(cancel);
