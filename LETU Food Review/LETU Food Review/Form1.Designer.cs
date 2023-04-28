@@ -58,9 +58,10 @@ namespace LETU_Food_Review
             // 
             // accountFlowPanel
             // 
-            this.accountFlowPanel.Location = new System.Drawing.Point(6, 5);
+            this.accountFlowPanel.Location = new System.Drawing.Point(0, 0);
+            this.accountFlowPanel.Margin = new System.Windows.Forms.Padding(4);
             this.accountFlowPanel.Name = "accountFlowPanel";
-            this.accountFlowPanel.Size = new System.Drawing.Size(385, 520);
+            this.accountFlowPanel.Size = new System.Drawing.Size(395, 521);
             this.accountFlowPanel.TabIndex = 0;
             // 
             // hivePage1
